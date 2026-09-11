@@ -14,7 +14,7 @@ const CONFIG = {
   address: "Av. de los Sauces #123, Col. Centro, Cuernavaca, Mor.",
 
   // Enlace de Google Maps (abre en el botón "Ver ubicación").
-  mapsUrl: "",
+  mapsUrl: "https://maps.google.com/?q=Salón+de+Fiestas+La+Quinta+Real",
 
   // Fotografías de la galería (dentro de assets/images/).
   galleryImages: [
@@ -30,7 +30,7 @@ const CONFIG = {
   musicSrc: "assets/audio/music.mp3",
 
   // URL del Web App de Google Apps Script (ver instrucciones).
-  GOOGLE_SCRIPT_URL: "AQUI_URL_DEL_SCRIPT"
+  GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbxrR1Hy0knG1ULFfC03nvlRVZwqI5v3NsCTdVSlaAmBuVx41v0SZ6doaLT8eqQ9Mvh5/exec"
 };
 
 /* ============================================================
