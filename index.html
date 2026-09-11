@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis XV | Invitación</title>
+  <meta name="description" content="Invitación digital - Mis XV">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { DEFAULT: '#b9934f', light: '#d3b274', pale: '#efe3c8' },
+            blush: { DEFAULT: '#f3dcd6', light: '#faf1ee' },
+            cream: '#fdfaf4',
+            ink: '#241b16'
+          },
+          fontFamily: {
+            script: ['"Great Vibes"', 'cursive'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['Jost', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #fdfaf4; -webkit-font-smoothing: antialiased; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .9s ease, transform .9s ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+
+<body class="font-sans text-ink">
+
+  <!-- ============================================================
+       1. PORTADA
+  ============================================================= -->
+  <section id="portada" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-cream via-blush-light to-blush px-6 py-16">
+    <!-- Decoración con parallax -->
+    <div data-parallax="-0.12" class="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-gold/10 blur-3xl"></div>
+    <div data-parallax="0.1" class="pointer-events-none absolute -bottom-24 -right-12 h-80 w-80 rounded-full bg-blush/50 blur-3xl"></div>
+    <div class="pointer-events-none absolute inset-4 rounded-[2.5rem] border border-gold/20"></div>
+
+    <div class="relative w-full max-w-2xl text-center">
+      <p class="reveal text-[11px] uppercase tracking-[0.55em] text-gold">Con todo nuestro cariño</p>
+
+      <h2 class="reveal mt-3 text-sm font-light uppercase tracking-[0.6em] text-gold" style="transition-delay:100ms">
+        <span class="text-[10px] align-middle">✦ </span>Mis XV<span class="text-[10px] align-middle"> ✦</span>
+      </h2>
+
+      <h1 id="coverName" class="reveal mt-4 font-script text-6xl leading-[1.1] text-ink sm:text-7xl" style="transition-delay:200ms">—</h1>
+
+      <div class="mx-auto mt-6 flex w-40 items-center gap-3">
+        <span class="h-px flex-1 bg-gold/50"></span>
+        <span class="h-1.5 w-1.5 rotate-45 bg-gold"></span>
+        <span class="h-px flex-1 bg-gold/50"></span>
+      </div>
+
+      <p id="coverDate" class="reveal mt-5 text-sm font-light uppercase tracking-[0.35em] text-ink/70" style="transition-delay:300ms">—</p>
+
+      <p class="reveal mt-6 font-serif text-lg italic text-ink/60" style="transition-delay:400ms">
+        Una noche de luces, baile y sueños por cumplir.
+        Os esperamos con el corazón abierto.
+      </p>
+
+      <a href="#rsvp" class="reveal mt-8 inline-block rounded-full bg-gold px-10 py-3.5 text-[11px] uppercase tracking-[0.3em] text-white shadow-lg shadow-gold/30 transition hover:bg-gold-light hover:shadow-gold/50" style="transition-delay:500ms">
+        Confirmar asistencia
+      </a>
+    </div>
+
+    <a href="#countdown" class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-gold/70">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7-7-7M19 5l-7 7-7-7" />
+      </svg>
+    </a>
+  </section>
+
+  <!-- ============================================================
+       2. CUENTA REGRESIVA
+  ============================================================= -->
+  <section id="countdown" class="relative bg-cream px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="reveal text-[11px] uppercase tracking-[0.5em] text-gold">Cuenta regresiva</p>
+      <h3 class="reveal mt-3 font-script text-5xl text-ink" style="transition-delay:100ms">Falta muy poco</h3>
+
+      <div class="mt-10 grid grid-cols-4 gap-2 sm:gap-4">
+        <div class="reveal rounded-2xl border border-gold/30 bg-white px-2 py-5 shadow-sm sm:py-7" style="transition-delay:100ms">
+          <p id="days" class="font-serif text-3xl font-semibold text-gold sm:text-5xl">00</p>
+          <p class="mt-1 text-[10px] uppercase tracking-[0.25em] text-ink/50 sm:text-xs">Días</p>
+        </div>
+        <div class="reveal rounded-2xl border border-gold/30 bg-white px-2 py-5 shadow-sm sm:py-7" style="transition-delay:200ms">
+          <p id="hours" class="font-serif text-3xl font-semibold text-gold sm:text-5xl">00</p>
+          <p class="mt-1 text-[10px] uppercase tracking-[0.25em] text-ink/50 sm:text-xs">Horas</p>
+        </div>
+        <div class="reveal rounded-2xl border border-gold/30 bg-white px-2 py-5 shadow-sm sm:py-7" style="transition-delay:300ms">
+          <p id="mins" class="font-serif text-3xl font-semibold text-gold sm:text-5xl">00</p>
+          <p class="mt-1 text-[10px] uppercase tracking-[0.25em] text-ink/50 sm:text-xs">Minutos</p>
+        </div>
+        <div class="reveal rounded-2xl border border-gold/30 bg-white px-2 py-5 shadow-sm sm:py-7" style="transition-delay:400ms">
+          <p id="secs" class="font-serif text-3xl font-semibold text-gold sm:text-5xl">00</p>
+          <p class="mt-1 text-[10px] uppercase tracking-[0.25em] text-ink/50 sm:text-xs">Segundos</p>
+        </div>
+      </div>
+
+      <p class="reveal mt-8 text-sm font-light text-ink/50" style="transition-delay:500ms">
+        <span id="eventDayInline" class="font-normal text-ink/70">—</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. INVITACIÓN
+  ============================================================= -->
+  <section id="invitacion" class="relative overflow-hidden bg-gradient-to-b from-blush-light to-cream px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-2xl text-center">
+      <div class="reveal mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-white text-gold shadow-sm">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.688c0-.868.568-1.634 1.348-1.875l12-3.836a2 2 0 012.652 1.875v12.296a2 2 0 01-2.653 1.875L3 14.688A3 3 0 012 11.688v-3z" />
+        </svg>
+      </div>
+
+      <h3 class="reveal mt-6 font-script text-5xl text-ink" style="transition-delay:100ms">La invitación</h3>
+
+      <div class="mx-auto mt-5 flex w-40 items-center gap-3">
+        <span class="h-px flex-1 bg-gold/50"></span>
+        <span class="h-1.5 w-1.5 rotate-45 bg-gold"></span>
+        <span class="h-px flex-1 bg-gold/50"></span>
+      </div>
+
+      <div class="reveal mt-8 space-y-6 text-center font-serif text-lg leading-relaxed text-ink/70 sm:text-xl" style="transition-delay:200ms">
+        <p class="first-letter:float-left first-letter:mr-3 first-letter:font-script first-letter:text-6xl first-letter:text-gold first-letter:leading-none">
+          <span id="inviteName" class="text-ink">—</span>, querida familia y amigos: con gran alegría y el corazón lleno de ilusión, os invito a compartir conmigo la noche más especial de mis quince años.
+        </p>
+        <p>
+          Será una velada de música, luz y recuerdos, en la que celebraré el final de una etapa y el comienzo de un sueño hecho realidad.
+        </p>
+        <p>
+          No habrá fiesta sin vosotros. Vuestra presencia es el mejor regalo que puedo recibir.
+        </p>
+      </div>
+
+      <p class="reveal mt-10 font-script text-4xl text-gold" style="transition-delay:300ms">
+        Con cariño, <span id="inviteSignature">—</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. INFORMACIÓN DEL EVENTO
+  ============================================================= -->
+  <section id="informacion" class="bg-cream px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-4xl">
+      <div class="text-center">
+        <p class="reveal text-[11px] uppercase tracking-[0.5em] text-gold">Dónde y cuándo</p>
+        <h3 class="reveal mt-3 font-script text-5xl text-ink" style="transition-delay:100ms">El evento</h3>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2">
+        <div class="reveal flex items-start gap-4 rounded-2xl border border-gold/25 bg-white p-6 shadow-sm" style="transition-delay:100ms">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush text-gold">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3.75 18.75V7.5a2.25 2.25 0 012.25-2.25h12a2.25 2.25 0 012.25 2.25v11.25m-16.5 0h16.5m-16.5 0a2.25 2.25 0 01-2.25-2.25M21 16.5a2.25 2.25 0 01-2.25 2.25m0 0H3" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.25em] text-gold">Fecha</p>
+            <p id="eventDay" class="mt-1 font-serif text-xl text-ink">—</p>
+          </div>
+        </div>
+
+        <div class="reveal flex items-start gap-4 rounded-2xl border border-gold/25 bg-white p-6 shadow-sm" style="transition-delay:200ms">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush text-gold">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.25em] text-gold">Hora</p>
+            <p id="eventTime" class="mt-1 font-serif text-xl text-ink">—</p>
+          </div>
+        </div>
+
+        <div class="reveal flex items-start gap-4 rounded-2xl border border-gold/25 bg-white p-6 shadow-sm" style="transition-delay:300ms">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush text-gold">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 8m0 8l6-3m-6 3v5m6-14l6-3v14.604a1 1 0 01-.553.894L15 17m0-8V5" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.25em] text-gold">Lugar</p>
+            <p id="venue" class="mt-1 font-serif text-xl text-ink">—</p>
+          </div>
+        </div>
+
+        <div class="reveal flex items-start gap-4 rounded-2xl border border-gold/25 bg-white p-6 shadow-sm" style="transition-delay:400ms">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blush text-gold">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.25em] text-gold">Dirección</p>
+            <p id="address" class="mt-1 font-serif text-xl text-ink">—</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal mt-10 text-center" style="transition-delay:450ms">
+        <a id="venueBtn" href="#" target="_blank" rel="noopener"
+           class="inline-block rounded-full border border-gold bg-white px-10 py-3.5 text-[11px] uppercase tracking-[0.3em] text-gold transition hover:bg-gold hover:text-white">
+          Ver ubicación
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. GALERÍA
+  ============================================================= -->
+  <section id="galeria" class="bg-gradient-to-b from-cream to-blush-light px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-5xl">
+      <div class="text-center">
+        <p class="reveal text-[11px] uppercase tracking-[0.5em] text-gold">Un poco de nosotros</p>
+        <h3 class="reveal mt-3 font-script text-5xl text-ink" style="transition-delay:100ms">Galería</h3>
+        <p class="reveal mx-auto mt-4 max-w-md text-sm font-light text-ink/55" style="transition-delay:200ms">
+          Tocad una fotografía para verla en grande.
+        </p>
+      </div>
+
+      <div id="galleryGrid" class="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. CONFIRMACIÓN DE ASISTENCIA
+  ============================================================= -->
+  <section id="rsvp" class="relative overflow-hidden bg-blush-light px-6 py-20 md:py-28">
+    <div class="mx-auto max-w-xl">
+      <div class="text-center">
+        <p class="reveal text-[11px] uppercase tracking-[0.5em] text-gold">RSVP</p>
+        <h3 class="reveal mt-3 font-script text-5xl text-ink" style="transition-delay:100ms">Confirma tu asistencia</h3>
+        <p class="reveal mt-4 text-sm font-light text-ink/60" style="transition-delay:200ms">
+          Cuéntanos si podrás acompañarnos el gran día.
+        </p>
+      </div>
+
+      <div class="reveal mt-10 rounded-3xl border border-gold/25 bg-white p-6 shadow-lg shadow-gold/10 sm:p-10" style="transition-delay:300ms">
+        <form id="rsvpForm" novalidate>
+          <!-- Nombre -->
+          <label for="rsvpName" class="block text-[10px] uppercase tracking-[0.25em] text-gold">Nombre completo *</label>
+          <input id="rsvpName" type="text" required autocomplete="name"
+                 class="mt-2 w-full rounded-xl border border-ink/15 bg-cream/50 px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
+                 placeholder="Tu nombre y apellidos">
+
+          <!-- Asistencia -->
+          <p class="mt-6 block text-[10px] uppercase tracking-[0.25em] text-gold">¿Asistirás? *</p>
+          <div class="mt-2 grid grid-cols-2 gap-3">
+            <div>
+              <input type="radio" name="asistencia" id="asistencia-si" value="Sí" class="peer sr-only" required>
+              <label for="asistencia-si"
+                     class="flex cursor-pointer items-center justify-center rounded-xl border border-ink/15 bg-cream/50 px-4 py-3 text-sm text-ink transition peer-checked:border-gold peer-checked:bg-gold/10">
+                Sí, asistiré
+              </label>
+            </div>
+            <div>
+              <input type="radio" name="asistencia" id="asistencia-no" value="No" class="peer sr-only" required>
+              <label for="asistencia-no"
+                     class="flex cursor-pointer items-center justify-center rounded-xl border border-ink/15 bg-cream/50 px-4 py-3 text-sm text-ink transition peer-checked:border-gold peer-checked:bg-gold/10">
+                No podré asistir
+              </label>
+            </div>
+          </div>
+
+          <!-- Acompañantes (se oculta si asiste "No") -->
+          <div id="guestsWrap" class="mt-6">
+            <label for="rsvpGuests" class="block text-[10px] uppercase tracking-[0.25em] text-gold">Número de acompañantes</label>
+            <select id="rsvpGuests"
+                    class="mt-2 w-full rounded-xl border border-ink/15 bg-cream/50 px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+
+            <label for="rsvpNames" class="mt-5 block text-[10px] uppercase tracking-[0.25em] text-gold">Nombre de los acompañantes</label>
+            <input id="rsvpNames" type="text"
+                   class="mt-2 w-full rounded-xl border border-ink/15 bg-cream/50 px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
+                   placeholder="Carlos, Ana, ...">
+          </div>
+
+          <!-- Comentario -->
+          <label for="rsvpComment" class="mt-6 block text-[10px] uppercase tracking-[0.25em] text-gold">Comentario (opcional)</label>
+          <textarea id="rsvpComment" rows="3"
+                    class="mt-2 w-full resize-none rounded-xl border border-ink/15 bg-cream/50 px-4 py-3 text-sm text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
+                    placeholder="Déjanos un mensaje..."></textarea>
+
+          <!-- Estado -->
+          <div id="rsvpStatus" class="hidden mt-6">
+            <div id="rsvpSuccess" class="hidden rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+              ✓ ¡Gracias! Tu confirmación fue registrada con éxito.
+            </div>
+            <div id="rsvpError" class="hidden rounded-xl border border-rose-300 bg-rose-50 px-4 py-3 text-sm text-rose-700">
+              ✕ No pudimos registrar tu confirmación. Inténtalo de nuevo.
+            </div>
+          </div>
+
+          <button id="submitBtn" type="submit"
+                  class="mt-8 w-full rounded-full bg-gold px-10 py-3.5 text-[11px] uppercase tracking-[0.3em] text-white shadow-lg shadow-gold/30 transition hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-60">
+            Confirmar
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie -->
+  <footer class="bg-cream px-6 py-12 text-center">
+    <p class="font-script text-4xl text-gold"><span id="footerName">—</span></p>
+    <p class="mt-3 text-[10px] uppercase tracking-[0.4em] text-ink/40">Con amor · 15 años · Gracias por ser parte</p>
+  </footer>
+
+  <!-- Botón de música -->
+  <button id="musicBtn" aria-label="Activar o pausar música"
+          class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gold text-white shadow-lg shadow-gold/40 transition hover:bg-gold-light">
+    <svg id="playIcon" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M8 5.14v14l11-7-11-7z" />
+    </svg>
+    <svg id="pauseIcon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+    </svg>
+  </button>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-[60] hidden items-center justify-center bg-ink/90 p-4">
+    <button id="lightboxClose" aria-label="Cerrar"
+            class="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <button id="lightboxPrev" aria-label="Anterior"
+            class="absolute left-2 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:left-6">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    <img id="lightboxImg" alt="Fotografía" class="max-h-[82vh] max-w-full rounded-xl object-contain shadow-2xl">
+    <button id="lightboxNext" aria-label="Siguiente"
+            class="absolute right-2 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 sm:right-6">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
